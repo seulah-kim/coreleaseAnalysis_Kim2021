@@ -1,4 +1,5 @@
 function out = preprocess(in)
+% This function accepts an input matrix (observations x time), pre-processes, and outputs an output matrix that are filtered in 3-steps as described in Methods in Kim et al. 2021
 
 % Low pass filter at 2kHz
 Fs=10000;
