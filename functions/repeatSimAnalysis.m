@@ -1,11 +1,14 @@
 function [pEPSC_cop,pIPSC_cop,pboth_cop,EICorr_cop_all,EICorr_cop_s,EICorrpval_cop_all,EICorrpval_cop_s,EICorrnull_cop,diffVar_cop,...
    pEPSC_ind,pIPSC_ind,pboth_ind,EICorr_ind_all,EICorr_ind_s,EICorrpval_ind_all,EICorrpval_ind_s,EICorrnull_ind,diffVar_ind]=repeatSimAnalysis(nSim)
+% This function performs nSim runs of simulations of glutamate/GABA corelease under independent and co-packaging release models.
+% Outputs variables include probability and correlation distributions resulting from nSim runs of simulation, using the two models.
+
 
 for sim_i = 1:nSim
     rng(sim_i)  % for reproducibility
     
     nTrials=200; % number of trials
-    match_pr =1; % we match 
+    match_pr =1; % for Fig 2.d and e, release probabilities in the two models are matched 
 
     % simulate two release models
     [iNet_cop,iNet_ind,t]=runSimCorelease(nTrials,match_pr);
@@ -52,6 +55,7 @@ for sim_i = 1:nSim
     Ithres=2*sigma*signalSize;
     
     % For Co-package model
+    clearvars failures successes
     failures =intersect(find(Iavg_cop<=Ithres),find(Eavg_cop>=Ethres));   % neither epsc nor ipsc
     successes = setdiff(1:length(Iavg_cop),failures); % everything else 
     
@@ -61,17 +65,17 @@ for sim_i = 1:nSim
     pboth_cop(sim_i)=length(intersect(find(Eavg_cop<Ethres),find(Iavg_cop>Ithres)))./length(Eavg_cop);
     
     % calculate correlation
-    [r,p]=corrcoef(-Eavg_cop(successes),Iavg_cop(successes));   % for successes
+    [r,p]=corrcoef(-Eavg_cop(successes),Iavg_cop(successes));   % for successes trials
     EICorr_cop_s(sim_i)=r(2,1);
     EICorrpval_cop_s(sim_i)=p(2,1);
-    [r2,p2]=corrcoef(-Eavg_cop,Iavg_cop);   % for all 
+    [r2,p2]=corrcoef(-Eavg_cop,Iavg_cop);   % for all trials
     EICorr_cop_all(sim_i)=r2(2,1);
     EICorrpval_cop_all(sim_i)=p2(2,1);
 
     subset = Iavg_cop(successes);
     EICorrnull_cop(sim_i)=corr2(-Eavg_cop(successes),subset(randperm(length(successes))));  % shuffling of success
 
-    % calculate variance difference
+    % calculate variance difference ---- delete for cleaning up? SAK 3.20.21
     Isuccess = find(Iavg_cop>Ithres);
     Ifail = setdiff(1:length(Iavg_cop),Isuccess);
     Esuccess = find(Eavg_cop<Ethres);
@@ -82,6 +86,7 @@ for sim_i = 1:nSim
     diffVar_cop(sim_i)=var(Eavg_cop(bothsuccess),Iavg_cop(bothsuccess))-var(Eavg_cop(Eonly))-var(Iavg_cop(Ionly));
     
     % For Independent model
+    clearvars failures successes
     failures =intersect(find(Iavg_ind<=Ithres),find(Eavg_ind>=Ethres));   % neither epsc nor ipsc
     successes = setdiff(1:length(Iavg_ind),failures); % everything else
     
@@ -96,17 +101,17 @@ for sim_i = 1:nSim
     
     % calculate correlation
 
-    [r,p]=corrcoef(-Eavg_ind(successes),Iavg_ind(successes));   % for successes
+    [r,p]=corrcoef(-Eavg_ind(successes),Iavg_ind(successes));   % for successe trials
     EICorr_ind_s(sim_i)=r(2,1);
     EICorrpval_ind_s(sim_i)=p(2,1);
-    [r2,p2]=corrcoef(-Eavg_ind,Iavg_ind);   % for all
+    [r2,p2]=corrcoef(-Eavg_ind,Iavg_ind);   % for all trials
     EICorr_ind_all(sim_i)=r2(2,1);
     EICorrpval_ind_all(sim_i)=p2(2,1);
     
     subset = Iavg_ind(successes);
     EICorrnull_ind(sim_i)=corr2(-Eavg_ind(successes),subset(randperm(length(successes))));    % correlation of shuffled data 
     
-    % calculate variance difference
+    % calculate variance difference ---- delete for cleaning up? SAK 3.20.21
     Isuccess = find(Iavg_ind>Ithres);
     Ifail = setdiff(1:length(Iavg_ind),Isuccess);
     Esuccess = find(Eavg_ind<Ethres);
