@@ -3,7 +3,7 @@
 This repository contains MATLAB scripts that can be used as templates for:
 1) simulation of post-synaptic currents rising from detection of co-packaging and independent release of glutamate and GABA neurotransmitters
 2) analysis of simulated dataset
-3) analysis of electrophysiology experimental dataset. 
+3) analysis of electrophysiology experimental dataset 
 
 Please see the publication for detailed description of analysis workflow (https://www.biorxiv.org/content/10.1101/2021.03.23.436594v1)
 
@@ -20,6 +20,19 @@ Add ons:
 - hline and vline
 
 ## How to use the scripts:
+### Simulation
+1. Open **Fig2_SimulationAnalysis.m**.
+2. Run the first section, which shows how to set parameters and perform simulation using **runSimCorelease** function. 
+
+### Analysis
+
+
+### Reproduce figures 2 and 5 from Kim et al. 2021
+1. Figure 2: 
+  - Run the full script **Fig2_SimulationAnalysis.m** 
+2. Figure 5:
+  - Download the raw data under ```/data/```
+  - Run the full script **Fig5_ExperimentalDataAnalysis.m** 
 
 ## Where to get more help:
 Contact Seul Ah Kim - Graduate student in Sabatini Lab at Harvard Medical School (seulah_kim@g.harvard.edu)
