@@ -20,6 +20,8 @@ Add ons:
 - hline and vline
 
 ## How to use the scripts:
+### Download all MATLAB functions under ```functions/```
+
 ### Simulation
 1. Open **Fig2_SimulationAnalysis.m**.
 2. Run the first section, which shows how to set parameters and perform simulation using **runSimCorelease** function. 
