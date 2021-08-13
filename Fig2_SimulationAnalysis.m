@@ -1,4 +1,4 @@
-% Fig2_AnalysisOfSimulation.m
+% Fig2_SimulationAnalysis.m
 % 
 % This script reproduces figures 2.c-f published in Kim et al. 2021.
 %
