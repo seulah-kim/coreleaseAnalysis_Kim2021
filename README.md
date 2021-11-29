@@ -29,9 +29,9 @@ Add ons:
 ### 3. Analysis
    ![schematic_ap](../main/Images/AnalysisPipelineIm.png)
 #### Reproduce figures 2 and 5 from Kim et al. 2021
-  #### Figure 2: 
+  Figure 2: 
   - Run the full script **Fig2_SimulationAnalysis.m** 
-  #### Figure 5:
+  Figure 5:
   - Download raw data under ```exampleData/``` folder in the repo. There are two example datasets, one for a co-packaging and the other for an independent site.
   - Go to the folder containing raw files with AD0_***.mat generic file name.
   - Open and run the full script **Fig5_ExperimentalDataAnalysis.m**, directory path needs to match the location of the files to automatically load individual files
