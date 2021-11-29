@@ -28,7 +28,7 @@ Add ons:
 
 ### 3. Analysis
    ![schematic_ap](../main/Images/AnalysisPipelineIm.png)
-#### Reproduce figures 2 and 5 from Kim et al. 2021
+#### Reproduce Figures 2 and 5 from Kim et al. 2021
   Figure 2: 
   - Run the full script **Fig2_SimulationAnalysis.m** 
   
