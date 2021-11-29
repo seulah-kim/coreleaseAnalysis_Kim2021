@@ -1,9 +1,9 @@
 ## Simulation and Analysis Demo
 
 This repository contains MATLAB scripts that can be used as templates for:
-1) simulation of post-synaptic currents rising from detection of co-packaging and independent release of glutamate and GABA neurotransmitters
-2) analysis of simulated dataset
-3) analysis of electrophysiology experimental dataset 
+1) simulation of post-synaptic currents (PSC) rising from detection of co-packaging and independent release of glutamate and GABA neurotransmitters
+2) analysis of simulated PSC dataset
+3) analysis of electrophysiology experimental PSC dataset 
 
 Please see the publication for detailed description of analysis workflow (https://www.biorxiv.org/content/10.1101/2021.03.23.436594v1)
 
@@ -27,9 +27,8 @@ Add ons:
    - Run the first section, which shows how to set parameters and perform simulation using **runSimCorelease** function. 
 
 ### 3. Analysis
-   - 
-
-### 4. Reproduce figures 2 and 5 from Kim et al. 2021
+   ![schematic_lt](../master/Images/AnalysisPipelineIm.png)
+#### Reproduce figures 2 and 5 from Kim et al. 2021
   #### Figure 2: 
   - Run the full script **Fig2_SimulationAnalysis.m** 
   #### Figure 5:
