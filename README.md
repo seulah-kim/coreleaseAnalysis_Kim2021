@@ -31,6 +31,7 @@ Add ons:
 #### Reproduce figures 2 and 5 from Kim et al. 2021
   Figure 2: 
   - Run the full script **Fig2_SimulationAnalysis.m** 
+  
   Figure 5:
   - Download raw data under ```exampleData/``` folder in the repo. There are two example datasets, one for a co-packaging and the other for an independent site.
   - Go to the folder containing raw files with AD0_***.mat generic file name.
