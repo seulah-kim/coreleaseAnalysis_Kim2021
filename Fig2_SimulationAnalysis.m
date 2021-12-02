@@ -82,8 +82,9 @@ saveas(fig2,'simulatedFig2e.pdf')
 
 clear all
 rng default % for reproducibility
-[pEPSC_cop,pIPSC_cop,pboth_cop,EICorr_cop_all,EICorr_cop_s,EICorrpval_cop_all,EICorrpval_cop_s,EICorrnull_cop,diffVar_cop,...
-   pEPSC_ind,pIPSC_ind,pboth_ind,EICorr_ind_all,EICorr_ind_s,EICorrpval_ind_all,EICorrpval_ind_s,EICorrnull_ind,diffVar_ind]=repeatSimAnalysis(1000);    % 200 nTrials per simulation
+
+[pEPSC_cop,pIPSC_cop,pboth_cop,EICorr_cop_all,EICorr_cop_s,EICorrpval_cop_all,EICorrpval_cop_s,EICorrnull_cop,...
+   pEPSC_ind,pIPSC_ind,pboth_ind,EICorr_ind_all,EICorr_ind_s,EICorrpval_ind_all,EICorrpval_ind_s,EICorrnull_ind]=repeatSimAnalysis(1000);   % 200 nTrials per simulation
 
 % distributions predicted by statistical independence
 pProd_cop=pEPSC_cop.*pIPSC_cop;
