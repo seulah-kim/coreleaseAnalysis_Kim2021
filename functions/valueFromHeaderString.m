@@ -1,4 +1,5 @@
 function out=valueFromHeaderString(globalName, header)
+% function in ScanImage package for reading header string values from global object "state"    
 	out='';
 	
 	if nargin<2
