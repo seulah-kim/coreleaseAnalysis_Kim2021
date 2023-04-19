@@ -8,7 +8,7 @@ This repository contains MATLAB scripts that can be used as templates for:
 Please see the publication for detailed description of analysis workflow (https://www.sciencedirect.com/science/article/abs/pii/S0896627322000071)
 
 ## Citation info:
-Kim SA, Wallace ML, El-Rifai M, Knudsen AR, Sabatini BL (2021). Biophysical demonstration of co-packaging of glutamate and GABA in individual synaptic vesicles in the central nervous system. bioRxiv (preprint)
+Kim, S., Wallace, M.L., El-Rifai, M., Knudsen, A.R. and Sabatini, B.L. (2022). Co-packaging of opposing neurotransmitters in individual synaptic vesicles in the central nervous system. Neuron.
 
 ## MATLAB package requirements:
 - Image Processing Toolbox
