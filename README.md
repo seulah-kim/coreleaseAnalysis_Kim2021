@@ -5,7 +5,7 @@ This repository contains MATLAB scripts that can be used as templates for:
 2) analysis of simulated PSC dataset
 3) analysis of electrophysiology experimental PSC dataset 
 
-Please see the publication for detailed description of analysis workflow (https://www.biorxiv.org/content/10.1101/2021.03.23.436594v1)
+Please see the publication for detailed description of analysis workflow (https://www.sciencedirect.com/science/article/abs/pii/S0896627322000071)
 
 ## Citation info:
 Kim SA, Wallace ML, El-Rifai M, Knudsen AR, Sabatini BL (2021). Biophysical demonstration of co-packaging of glutamate and GABA in individual synaptic vesicles in the central nervous system. bioRxiv (preprint)
